@@ -1,7 +1,6 @@
 ﻿using DesignPatterns.SingletonPattern;
 
-var countryProvider = new CountryProvider();
-var countries = await countryProvider.GetCountries();
+var countries = await CountryProvider.Instance.GetCountries();
 
 foreach (var country in countries)
 {
@@ -11,8 +10,7 @@ foreach (var country in countries)
 
 // Another service
 
-var countryProvider1 = new CountryProvider();
-var countries1 = await countryProvider1.GetCountries();
+var countries1 = await CountryProvider.Instance.GetCountries();
 
 foreach (var country in countries1)
 {
